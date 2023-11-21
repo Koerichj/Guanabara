@@ -40,7 +40,7 @@
             </hgroup>
         </header>
 
-<form>
+<form method="post" id="fContato" action="mailto:jeankoerich33@gmail.com">
     <fieldset id="usuario">
         <legend>Identificação do Usuário</legend>
             <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
@@ -59,8 +59,28 @@
         <legend>Endereço do Usuário</legend>
             <p><label for="cRua">Logradouro:</label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav, ..."></p>
             <p><label for="cNum">Número:</label><input type="number" name="tNum" id="cNum" min="0" max="99999"></p>
-            <p><label for="cEst">Estado:</label></p>
-            <p><label for="cCid">Cidade:</label></p>
+            <p><label for="cEst">Estado:</label>
+            <select name="tEst" id="cEst">
+                <optgroup label="Região Sudeste">
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="MG">Minas Gerais</option>
+                </optgroup>
+
+                <optgroup label="Região Sul">
+                    <option value="PR">Parana</option>
+                    <option value="SC" selected>Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </optgroup>
+                
+            </select></p>
+            <p><label for="cCid">Cidade:</label><input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidade"></p>
+            <datalist id="cidade">
+                <option value="Rio de Janeiro"></option>
+                <option value="Nova Iguaçu"></option>
+                <option value="Niteói"></option>
+                <option value="Belford Roxo"></option>
+            </datalist>
     </fieldset>
     
     <fieldset id="mensagem">
